@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, xinetzone
+# This file is distributed under the same license as the tvm-book package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: tvm-book \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-14 22:41+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../../README.md:1
+msgid "SinGAN"
+msgstr ""
+
+#: ../../../README.md:3
+msgid ""
+"This is an unofficial implementation of SinGAN from someone who's been "
+"sitting right next to SinGAN's creator for almost five years."
+msgstr ""
+"这是一个与 SinGAN 的创造者坐在一起近 5 年的人对 SinGAN 的非官方实现。"
+
+#: ../../../README.md:8
+msgid ""
+"Please refer the project's [page](https://tamarott.github.io/SinGAN.htm) "
+"for more details."
+msgstr ""
+"详情请参阅项目的 [页面](https://tamarott.github.io/SinGAN.htm)。"
+
+#: ../../../README.md:10
+msgid "Citation"
+msgstr "引用"
+
+#: ../../../README.md:12
+msgid "If you use this code for your research, please cite the paper:"
+msgstr "如果您在研究中使用此代码，请引用本文："
+
+#: ../../../README.md:25
+msgid "Code"
+msgstr "代码"
+
+#: ../../../README.md:27
+msgid "Clone repository"
+msgstr "克隆仓库"
+
+#: ../../../README.md:29
+msgid "Clone this repository into any place you want."
+msgstr "将此存储库克隆到任何需要的位置。"
+
+#: ../../../README.md:36
+msgid "Install dependencies"
+msgstr "安装依赖"
+
+#: ../../../README.md:42
+msgid "This code tested in PyTorch 1.8.1."
+msgstr "这段代码在 PyTorch 1.8.1 中进行了测试。（也在 1.10 测试）"
+
+#: ../../../README.md:44
+msgid "Training"
+msgstr "训练"
+
+#: ../../../README.md:45
+msgid "To train SinGAN model on your own image:"
+msgstr "以你自己的图像训练 SinGAN 模型："
+
+#: ../../../README.md:51
+msgid "Evaluating"
+msgstr "评估"
+
+#: ../../../README.md:52
+msgid "For evaluating, run the following command:"
+msgstr "执行如下命令进行评估："

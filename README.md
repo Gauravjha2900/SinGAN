@@ -1,17 +1,14 @@
 # SinGAN
+
 This is an unofficial implementation of SinGAN from someone who's been sitting right next to SinGAN's creator for almost five years.
 
-
-<p align="center">
-  <img width="992" height="372" src="/figures/sampled.png">
-</p>
-
+```{image} figures/sampled.png
+```
 
 Please refer the project's [page](https://tamarott.github.io/SinGAN.htm) for more details.
 
-
-
 ## Citation
+
 If you use this code for your research, please cite the paper:
 
 ```
