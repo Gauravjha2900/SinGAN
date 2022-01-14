@@ -220,6 +220,6 @@ html_favicon = "docs/page-logo.jfif"
 # 避免将 jupter 执行报错的信息输出到 cmd
 nb_merge_streams = True
 execution_allow_errors = True
-jupyter_execute_notebooks = "cache"
+jupyter_execute_notebooks = 'off' # "cache"
 
 epub_show_urls = 'footnote'
