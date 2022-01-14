@@ -87,6 +87,7 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="shortcut icon" href="../_static/page-logo.jfif"/>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
+    <link rel="prev" title="SinGAN" href="../README.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="zh_CN">
     
@@ -123,10 +124,15 @@ commentsRunWhenDOMLoaded(addUtterances);
   <input type="search" class="form-control" name="q" id="search-input" placeholder="搜索文档..." aria-label="搜索文档..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../README.html">
    SinGAN
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   项目样例
   </a>
  </li>
 </ul>
@@ -273,35 +279,6 @@ commentsRunWhenDOMLoaded(addUtterances);
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">Path</span><span class="p">(</span><span class="s1">&#39;../generation&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()])</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="kn">from</span> <span class="nn">trainer</span> <span class="kn">import</span> <span class="n">Trainer</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span> <span class="nn">tools.config</span> <span class="kn">import</span> <span class="n">init</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">SinGAN</span><span class="o">/</span><span class="n">SinGAN</span><span class="o">/</span><span class="n">docs</span><span class="o">/../</span><span class="n">generation</span><span class="o">/</span><span class="n">trainer</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">math</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">logging</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">models</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">torch</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">SinGAN</span><span class="o">/</span><span class="n">SinGAN</span><span class="o">/</span><span class="n">docs</span><span class="o">/../</span><span class="n">generation</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">.generators</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">.discriminators</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="n">File</span> <span class="o">~/</span><span class="n">work</span><span class="o">/</span><span class="n">SinGAN</span><span class="o">/</span><span class="n">SinGAN</span><span class="o">/</span><span class="n">docs</span><span class="o">/../</span><span class="n">generation</span><span class="o">/</span><span class="n">models</span><span class="o">/</span><span class="n">generators</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">torch</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">math</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">torch.nn</span> <span class="k">as</span> <span class="nn">nn</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;torch&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -334,20 +311,130 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Input</span> <span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="c1"># enables a ctrl-c without triggering errors</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
-<span class="ne">---&gt; </span><span class="mi">10</span> <span class="n">trainer</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">toml_path</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Namespace(gen_model=&#39;g_multivanilla&#39;, dis_model=&#39;d_vanilla&#39;, min_features=32, max_features=32, num_blocks=5, kernel_size=3, padding=0, min_size=25, max_size=250, scale_factor_init=0.75, noise_weight=0.1, batch_size=1, crop_size=0, num_steps=4000, lr=0.0005, gen_betas=[0.5, 0.9], dis_betas=[0.5, 0.9], num_critic=1, step_size=2000, gamma=0.1, penalty_weight=0.1, reconstruction_weight=10.0, adversarial_weight=1.0, print_every=200, eval_every=100, results_dir=&#39;./results&#39;, evaluation=False, model_to_load=&#39;&#39;, amps_to_load=&#39;&#39;, use_tb=False, device=&#39;cuda&#39;, root=&#39;../images/balloons.png&#39;, device_ids=[0], seed=3635, save=&#39;2022-01-15_01-41-28&#39;, save_path=&#39;./results&#39;)
+MultiVanilla(
+  (curr): Vanilla(
+    (features): Sequential(
+      (0): BasicBlock(
+        (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1))
+        (batch_norm): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (lrelu): LeakyReLU(negative_slope=0.2, inplace=True)
+      )
+      (1): BasicBlock(
+        (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+        (batch_norm): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (lrelu): LeakyReLU(negative_slope=0.2, inplace=True)
+      )
+      (2): BasicBlock(
+        (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+        (batch_norm): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (lrelu): LeakyReLU(negative_slope=0.2, inplace=True)
+      )
+      (3): BasicBlock(
+        (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+        (batch_norm): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (lrelu): LeakyReLU(negative_slope=0.2, inplace=True)
+      )
+    )
+    (features_to_image): Sequential(
+      (0): Conv2d(32, 3, kernel_size=(3, 3), stride=(1, 1))
+      (1): Tanh()
+    )
+  )
+  (prev): Module()
+)
+Vanilla(
+  (features): Sequential(
+    (0): BasicBlock(
+      (conv): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1))
+      (batch_norm): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (1): BasicBlock(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+      (batch_norm): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (2): BasicBlock(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+      (batch_norm): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+    (3): BasicBlock(
+      (conv): Conv2d(32, 32, kernel_size=(3, 3), stride=(1, 1))
+      (batch_norm): BatchNorm2d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+      (lrelu): LeakyReLU(negative_slope=0.2, inplace=True)
+    )
+  )
+  (classifier): Conv2d(32, 1, kernel_size=(3, 3), stride=(1, 1))
+)
+Number of parameters in generator: 29763
+Number of parameters in discriminator: 29185
 
-<span class="nn">Input In [2],</span> in <span class="ni">main</span><span class="nt">(toml_path, opt)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">toml_path</span><span class="p">,</span> <span class="n">opt</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">args</span> <span class="o">=</span> <span class="n">init</span><span class="p">(</span><span class="n">opt</span><span class="p">,</span> <span class="n">toml_path</span><span class="p">,</span> <span class="n">save_name</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">3635</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="c1"># trainer</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+Scale #1
+Iteration 0, D: 0.068298, D_r: 0.008378, D_f: 0.029563, D_gp: 0.303572, G: 1.88331, G_recon: 0.18590, G_adv: 0.02428
+C:\Users\chaos\anaconda3\envs\torch\lib\site-packages\torch\optim\lr_scheduler.py:154: UserWarning: The epoch parameter in `scheduler.step()` was not necessary and is being deprecated where possible. Please use `scheduler.step()` to step the scheduler. During the deprecation, if epoch is different from None, the closed form is used instead of the new chainable form, where available. Please open an issue if you are unable to replicate your use case: https://github.com/pytorch/pytorch/issues/new/choose.
+  warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning)
+Iteration 200, D: -0.678143, D_r: -0.652164, D_f: -0.826018, D_gp: 8.000395, G: 0.85600, G_recon: 0.00662, G_adv: 0.78978
+Iteration 400, D: -1.658069, D_r: -0.656626, D_f: -1.591637, D_gp: 5.901940, G: 1.80340, G_recon: 0.00776, G_adv: 1.72580
+Iteration 600, D: -2.207411, D_r: -0.912324, D_f: -1.857137, D_gp: 5.620506, G: 2.00568, G_recon: 0.00871, G_adv: 1.91855
+Iteration 800, D: -1.707474, D_r: -0.737149, D_f: -1.122354, D_gp: 1.520291, G: 1.38408, G_recon: 0.01297, G_adv: 1.25441
+Iteration 1000, D: -1.243099, D_r: -0.478408, D_f: -2.012594, D_gp: 12.479028, G: 2.31267, G_recon: 0.00660, G_adv: 2.24667
+Iteration 1200, D: -1.811601, D_r: -0.410125, D_f: -2.046451, D_gp: 6.449751, G: 2.15485, G_recon: 0.00478, G_adv: 2.10706
+Iteration 1400, D: -0.850593, D_r: 0.227416, D_f: -2.444138, D_gp: 13.661291, G: 2.50050, G_recon: 0.00430, G_adv: 2.45748
+Iteration 1600, D: -1.794065, D_r: -0.406599, D_f: -2.072144, D_gp: 6.846771, G: 2.23039, G_recon: 0.00703, G_adv: 2.16005
+Iteration 1800, D: -1.257632, D_r: -0.725456, D_f: -1.401535, D_gp: 8.693596, G: 1.54986, G_recon: 0.00725, G_adv: 1.47737
+Iteration 2000, D: -1.497584, D_r: -0.930169, D_f: -1.421547, D_gp: 8.541327, G: 1.52620, G_recon: 0.00403, G_adv: 1.48586
+Iteration 2200, D: -2.575397, D_r: -1.176368, D_f: -1.916423, D_gp: 5.173935, G: 1.94764, G_recon: 0.00255, G_adv: 1.92217
+Iteration 2400, D: -1.283952, D_r: -1.190094, D_f: -1.720234, D_gp: 16.263754, G: 1.73951, G_recon: 0.00197, G_adv: 1.71977
+Iteration 2600, D: -1.877363, D_r: -1.234343, D_f: -1.711417, D_gp: 10.683970, G: 1.72026, G_recon: 0.00179, G_adv: 1.70233
+Iteration 2800, D: -1.973444, D_r: -1.274468, D_f: -1.630043, D_gp: 9.310667, G: 1.65056, G_recon: 0.00173, G_adv: 1.63323
+Iteration 3000, D: -1.980394, D_r: -1.060182, D_f: -1.653508, D_gp: 7.332955, G: 1.67371, G_recon: 0.00181, G_adv: 1.65565
+Iteration 3200, D: -1.575602, D_r: -1.179688, D_f: -1.339411, D_gp: 9.434964, G: 1.35570, G_recon: 0.00175, G_adv: 1.33820
+Iteration 3400, D: -1.506245, D_r: -1.402051, D_f: -1.363202, D_gp: 12.590090, G: 1.37780, G_recon: 0.00168, G_adv: 1.36096
+Iteration 3600, D: -1.719652, D_r: -1.410792, D_f: -1.535287, D_gp: 12.264274, G: 1.56233, G_recon: 0.00205, G_adv: 1.54178
+Iteration 3800, D: -1.386674, D_r: -1.556060, D_f: -1.309927, D_gp: 14.793124, G: 1.33712, G_recon: 0.00182, G_adv: 1.31893
+Iteration 4000, D: -1.182959, D_r: -1.666069, D_f: -1.101141, D_gp: 15.842505, G: 1.11817, G_recon: 0.00154, G_adv: 1.10280
 
-<span class="ne">NameError</span>: name &#39;init&#39; is not defined
+Scale #2
+Iteration 0, D: 0.654933, D_r: 0.000311, D_f: -0.786137, D_gp: 14.407587, G: 1.74515, G_recon: 0.08686, G_adv: 0.87655
+Iteration 200, D: -0.517986, D_r: -0.289083, D_f: -0.489821, D_gp: 2.609178, G: 0.57415, G_recon: 0.00663, G_adv: 0.50789
+Iteration 400, D: -0.431593, D_r: -0.487066, D_f: -0.287624, D_gp: 3.430976, G: 0.35031, G_recon: 0.00477, G_adv: 0.30265
+Iteration 600, D: -0.535980, D_r: -0.654302, D_f: -0.243143, D_gp: 3.614655, G: 0.27752, G_recon: 0.00399, G_adv: 0.23757
+Iteration 800, D: -0.370378, D_r: -0.916251, D_f: -0.198318, D_gp: 7.441901, G: 0.43650, G_recon: 0.00436, G_adv: 0.39287
+Iteration 1000, D: -0.858668, D_r: -0.756070, D_f: -0.279101, D_gp: 1.765030, G: 0.33517, G_recon: 0.00346, G_adv: 0.30059
+Iteration 1200, D: -1.033465, D_r: -0.997846, D_f: -0.345128, D_gp: 3.095094, G: 0.48587, G_recon: 0.00384, G_adv: 0.44744
+Iteration 1400, D: -0.788800, D_r: -0.473436, D_f: -0.628431, D_gp: 3.130676, G: 0.64419, G_recon: 0.00395, G_adv: 0.60467
+Iteration 1600, D: -0.756545, D_r: -0.811329, D_f: -0.185394, D_gp: 2.401784, G: 0.25148, G_recon: 0.00334, G_adv: 0.21806
+Iteration 1800, D: -0.703822, D_r: -0.810759, D_f: -0.192353, D_gp: 2.992903, G: 0.26943, G_recon: 0.00237, G_adv: 0.24574
+Iteration 2000, D: -0.866949, D_r: -1.057051, D_f: -0.065547, D_gp: 2.556493, G: 0.13452, G_recon: 0.00318, G_adv: 0.10275
+Iteration 2200, D: -0.839870, D_r: -0.894047, D_f: -0.380554, D_gp: 4.347306, G: 0.40304, G_recon: 0.00157, G_adv: 0.38738
+Iteration 2400, D: -1.033937, D_r: -0.898291, D_f: -0.483316, D_gp: 3.476695, G: 0.50040, G_recon: 0.00156, G_adv: 0.48484
+Iteration 2600, D: -0.722714, D_r: -0.897563, D_f: -0.473073, D_gp: 6.479218, G: 0.49429, G_recon: 0.00147, G_adv: 0.47958
+Iteration 2800, D: -0.750715, D_r: -0.968905, D_f: -0.337470, D_gp: 5.556601, G: 0.36567, G_recon: 0.00146, G_adv: 0.35105
+Iteration 3000, D: -0.934819, D_r: -0.830856, D_f: -0.368514, D_gp: 2.645512, G: 0.38782, G_recon: 0.00144, G_adv: 0.37345
+Iteration 3200, D: -0.606879, D_r: -0.888352, D_f: -0.365419, D_gp: 6.468919, G: 0.37975, G_recon: 0.00148, G_adv: 0.36492
+Iteration 3400, D: -0.698301, D_r: -0.791428, D_f: -0.425332, D_gp: 5.184588, G: 0.45684, G_recon: 0.00140, G_adv: 0.44286
+Iteration 3600, D: -0.548536, D_r: -0.803773, D_f: -0.520116, D_gp: 7.753529, G: 0.53321, G_recon: 0.00141, G_adv: 0.51915
+Iteration 3800, D: -0.997795, D_r: -0.927103, D_f: -0.573966, D_gp: 5.032741, G: 0.59937, G_recon: 0.00134, G_adv: 0.58596
+Iteration 4000, D: -0.539366, D_r: -0.795945, D_f: -0.683661, D_gp: 9.402400, G: 0.70509, G_recon: 0.00144, G_adv: 0.69072
+
+Scale #3
+Iteration 0, D: 0.282622, D_r: 0.445932, D_f: -0.571687, D_gp: 4.083763, G: 0.89192, G_recon: 0.02315, G_adv: 0.66040
+Iteration 200, D: -0.260891, D_r: -0.155453, D_f: -0.211440, D_gp: 1.060016, G: 0.32907, G_recon: 0.00472, G_adv: 0.28192
+Iteration 400, D: -0.498166, D_r: -0.295801, D_f: -0.365447, D_gp: 1.630818, G: 0.42838, G_recon: 0.00490, G_adv: 0.37941
+Iteration 600, D: -0.221235, D_r: -0.768669, D_f: 0.246162, D_gp: 3.012714, G: -0.15503, G_recon: 0.00337, G_adv: -0.18875
+Iteration 800, D: -0.006575, D_r: -0.963157, D_f: 0.540075, D_gp: 4.165068, G: -0.35668, G_recon: 0.00303, G_adv: -0.38698
+Iteration 1000, D: -0.121871, D_r: -0.894179, D_f: 0.410616, D_gp: 3.616921, G: -0.34090, G_recon: 0.00302, G_adv: -0.37113
+Iteration 1200, D: -0.284937, D_r: -0.898216, D_f: 0.428230, D_gp: 1.850502, G: -0.34474, G_recon: 0.00310, G_adv: -0.37572
+Iteration 1400, D: -0.371313, D_r: -1.371932, D_f: 0.675811, D_gp: 3.248083, G: -0.63737, G_recon: 0.00264, G_adv: -0.66375
+Iteration 1600, D: -0.353366, D_r: -1.577660, D_f: 1.122070, D_gp: 1.022238, G: -1.05285, G_recon: 0.00211, G_adv: -1.07395
+Iteration 1800, D: -0.359091, D_r: -1.610699, D_f: 1.052463, D_gp: 1.991450, G: -0.99942, G_recon: 0.00228, G_adv: -1.02222
+Iteration 2000, D: -0.361855, D_r: -1.860610, D_f: 1.277493, D_gp: 2.212618, G: -1.24318, G_recon: 0.00247, G_adv: -1.26790
+Iteration 2200, D: -0.521421, D_r: -1.890857, D_f: 1.182802, D_gp: 1.866339, G: -1.16454, G_recon: 0.00137, G_adv: -1.17825
+Iteration 2400, D: -0.550705, D_r: -1.965647, D_f: 1.199306, D_gp: 2.156359, G: -1.18477, G_recon: 0.00133, G_adv: -1.19809
+Iteration 2600, D: -0.429286, D_r: -1.898012, D_f: 1.056641, D_gp: 4.120846, G: -1.03958, G_recon: 0.00143, G_adv: -1.05383
+Iteration 2800, D: -0.230718, D_r: -1.940700, D_f: 1.335763, D_gp: 3.742190, G: -1.31517, G_recon: 0.00135, G_adv: -1.32868
 </pre></div>
 </div>
 </div>
@@ -378,7 +465,14 @@ commentsRunWhenDOMLoaded(addUtterances);
               
             
                 <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="../README.html" title="上一页 页">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">上一页</p>
+            <p class="prev-next-title">SinGAN</p>
+        </div>
+    </a>
 </div>
             
         </div>

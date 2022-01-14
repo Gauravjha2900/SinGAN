@@ -5,6 +5,7 @@
 :hidden:
 
 README
+docs/demo
 ```
 
 # 索引与表格
