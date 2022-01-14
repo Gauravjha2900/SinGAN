@@ -24,12 +24,15 @@ def load_args(path, kw):
     return bunch
 
 
-def init(opt, toml_path, *, save_name='', seed=-1):
+def init(opt, toml_path, *,
+         save_name='',
+         results_dir="./results",
+         seed=-1):
     time_stamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     _opt = {
         'seed': randint(0, 12345) if seed == -1 else seed,
         'save': save_name if save_name else time_stamp,
-        'save_path': f"./results{save_name}"
+        'save_path': f"{results_dir}/{save_name}"
     }
     opt.update(_opt)
     args = load_args(toml_path, opt)
