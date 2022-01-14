@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 
-project = 'tvm-book'
+project = 'SinGAN'
 copyright = '2021, xinetzone'
 author = 'xinetzone'
 
