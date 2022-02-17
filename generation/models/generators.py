@@ -40,16 +40,16 @@ class Vanilla(nn.Module):
 
         # features
         blocks = [BasicBlock(in_channels=in_channels, out_channels=max_features, kernel_size=kernel_size, padding=padding)]
-        for i in range(0, num_blocks - 2):
+        for i in range(num_blocks - 2):
             f = max_features // pow(2, (i+1))
             blocks.append(BasicBlock(in_channels=max(min_features, f * 2), out_channels=max(min_features, f), kernel_size=kernel_size, padding=padding))
         self.features = nn.Sequential(*blocks)
-        
+
         # classifier
         self.features_to_image = nn.Sequential(
             nn.Conv2d(in_channels=max(f, min_features), out_channels=in_channels, kernel_size=kernel_size, padding=padding),
             nn.Tanh())
-        
+
         # initialize weights
         initialize_model(self)
 
@@ -117,7 +117,7 @@ class MultiVanilla(nn.Module):
         # compute prevous layers
         with torch.no_grad():
             y = self._compute_previous(reals, amps, noises).detach()
-            
+
         # fixed noise
         if noises:
             z = y + amps[self.key].view(-1, 1, 1, 1) * noises[self.key]
@@ -126,8 +126,7 @@ class MultiVanilla(nn.Module):
             n = self._generate_noise(reals[self.key], repeat=(not self.scale))
             z = y + amps[self.key].view(-1, 1, 1, 1) * n
 
-        o = self.curr(z.detach(), y.detach()) 
-        return o
+        return self.curr(z.detach(), y.detach())
 
     def _generate_noise(self, tensor_like, repeat=False):
         if not repeat:

@@ -11,6 +11,4 @@ class ConsistencyLoss(torch.nn.Module):
         targets = imresize(targets, scale=self.scale)
         inputs = imresize(inputs, scale=self.scale)
 
-        loss = self.criterion(inputs, targets.detach())
-
-        return loss
+        return self.criterion(inputs, targets.detach())

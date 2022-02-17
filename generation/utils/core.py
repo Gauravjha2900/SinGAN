@@ -102,7 +102,7 @@ def reflect_padding(
     while our implementation yields [a, a, b, c, d, d].
     '''
     b, c, h, w = x.size()
-    if dim == 2 or dim == -2:
+    if dim in {2, -2}:
         padding_buffer = x.new_zeros(b, c, h + pad_pre + pad_post, w)
         padding_buffer[..., pad_pre:(h + pad_pre), :].copy_(x)
         for p in range(pad_pre):
@@ -182,11 +182,10 @@ def get_weight(
 
 def reshape_tensor(x: torch.Tensor, dim: int, kernel_size: int) -> torch.Tensor:
     # Resize height
-    if dim == 2 or dim == -2:
+    if dim in {2, -2}:
         k = (kernel_size, 1)
         h_out = x.size(-2) - kernel_size + 1
         w_out = x.size(-1)
-    # Resize width
     else:
         k = (1, kernel_size)
         h_out = x.size(-2)
@@ -219,11 +218,7 @@ def resize_1d(
         return x
 
     # Default bicubic kernel with antialiasing (only when downsampling)
-    if kernel == 'cubic':
-        kernel_size = 4
-    else:
-        kernel_size = math.floor(6 * sigma)
-
+    kernel_size = 4 if kernel == 'cubic' else math.floor(6 * sigma)
     if antialiasing and (scale < 1):
         antialiasing_factor = scale
         kernel_size = math.ceil(kernel_size / antialiasing_factor)
@@ -260,7 +255,7 @@ def resize_1d(
     x_pad = padding(x, dim, pad_pre, pad_post, padding_type=padding_type)
     unfold = reshape_tensor(x_pad, dim, kernel_size)
     # Subsampling first
-    if dim == 2 or dim == -2:
+    if dim in {2, -2}:
         sample = unfold[..., base, :]
         weight = weight.view(1, kernel_size, sample.size(2), 1)
     else:
@@ -293,8 +288,7 @@ def downsampling_2d(
     pad_w = (k_w - scale) // 2
     x = padding(x, -2, pad_h, pad_h, padding_type=padding_type)
     x = padding(x, -1, pad_w, pad_w, padding_type=padding_type)
-    y = F.conv2d(x, k, padding=0, stride=scale)
-    return y
+    return F.conv2d(x, k, padding=0, stride=scale)
 
 def imresize(
         x: torch.Tensor,
@@ -376,11 +370,7 @@ def imresize(
     if b is not None:
         x = x.view(b, c, rh, rw)        # 4-dim
     else:
-        if c is not None:
-            x = x.view(c, rh, rw)       # 3-dim
-        else:
-            x = x.view(rh, rw)          # 2-dim
-
+        x = x.view(c, rh, rw) if c is not None else x.view(rh, rw)
     if dtype is not None:
         if not dtype.is_floating_point:
             x = x.round()

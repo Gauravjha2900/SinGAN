@@ -54,10 +54,9 @@ class Dataset(torch.utils.data.dataset.Dataset):
 
             for key in self.reals.keys():
                 scale = self.reals[key].size(-1) / float(self.image.size(-1))
-                reals.update({key: self._augment(self.reals[key].clone(), aug_params, scale)})
-                noises.update({key: self._augment(self.noises[key].clone(), aug_params, scale)})
+                reals[key] = self._augment(self.reals[key].clone(), aug_params, scale)
+                noises[key] = self._augment(self.noises[key].clone(), aug_params, scale)
 
-        # full size
         else: 
             reals = self.reals #TODO: clone when crop
             noises = self.noises #TODO: clone when crop

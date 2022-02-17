@@ -20,8 +20,7 @@ def write(bunch, path):
 def load_args(path, kw):
     opt = toml.load(path)
     opt.update(kw)
-    bunch = Namespace(**opt)
-    return bunch
+    return Namespace(**opt)
 
 
 def init(opt, toml_path, *,
@@ -31,9 +30,10 @@ def init(opt, toml_path, *,
     time_stamp = datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
     _opt = {
         'seed': randint(0, 12345) if seed == -1 else seed,
-        'save': save_name if save_name else time_stamp,
-        'save_path': f"{results_dir}/{save_name}"
+        'save': save_name or time_stamp,
+        'save_path': f"{results_dir}/{save_name}",
     }
+
     opt.update(_opt)
     args = load_args(toml_path, opt)
 

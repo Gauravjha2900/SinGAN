@@ -71,8 +71,18 @@ class Trainer():
         if self.print_model:
             logging.info(self.g_model)
             logging.info(self.d_model)
-            logging.info('Number of parameters in generator: {}'.format(sum([l.nelement() for l in self.g_model.parameters()])))
-            logging.info('Number of parameters in discriminator: {}'.format(sum([l.nelement() for l in self.d_model.parameters()])))
+            logging.info(
+                'Number of parameters in generator: {}'.format(
+                    sum(l.nelement() for l in self.g_model.parameters())
+                )
+            )
+
+            logging.info(
+                'Number of parameters in discriminator: {}'.format(
+                    sum(l.nelement() for l in self.d_model.parameters())
+                )
+            )
+
             self.print_model = False
 
         # training mode
@@ -111,7 +121,12 @@ class Trainer():
 
         # print 
         logging.info(self.g_model)
-        logging.info('Number of parameters in generator: {}'.format(sum([l.nelement() for l in self.g_model.parameters()])))
+        logging.info(
+            'Number of parameters in generator: {}'.format(
+                sum(l.nelement() for l in self.g_model.parameters())
+            )
+        )
+
 
         # key
         self.key = 's{}'.format(self.args.stop_scale + 1)
@@ -171,18 +186,17 @@ class Trainer():
         # loop over scales
         for i in range(self.args.stop_scale + 1):
             s = math.pow(self.args.scale_factor, self.args.stop_scale - i)
-            reals.update({'s{}'.format(i): imresize(real.clone().detach(), s).squeeze(dim=0)})
+            reals['s{}'.format(i)] = imresize(real.clone().detach(), s).squeeze(dim=0)
 
         return reals
 
     def _set_noises(self, reals):
-        noises = {}
-
-        # loop over scales
-        for key in reals.keys():
-            noises.update({key: self._generate_noise(reals[key].unsqueeze(dim=0), repeat=(key == 's0')).squeeze(dim=0)})
-        
-        return noises
+        return {
+            key: self._generate_noise(
+                reals[key].unsqueeze(dim=0), repeat=(key == 's0')
+            ).squeeze(dim=0)
+            for key in reals.keys()
+        }
 
     def _generate_noise(self, tensor_like, repeat=False):
         if not repeat:
@@ -344,14 +358,16 @@ class Trainer():
         self._save_image(generated_sampled, 's{}_sampled.png'.format(self.step))
 
     def _sample_iteration(self, loader):
-        # set inputs
-        data_reals = loader.dataset.reals
-        reals = {}
         amps = loader.dataset.amps
 
-        # set reals
-        for key in data_reals.keys():
-           reals.update({key: data_reals[key].clone().unsqueeze(dim=0).repeat(self.args.batch_size, 1, 1, 1)}) 
+        data_reals = loader.dataset.reals
+        reals = {
+            key: data_reals[key]
+            .clone()
+            .unsqueeze(dim=0)
+            .repeat(self.args.batch_size, 1, 1, 1)
+            for key in data_reals.keys()
+        }
 
         # evaluation
         with torch.no_grad():

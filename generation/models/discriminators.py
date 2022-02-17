@@ -38,14 +38,14 @@ class Vanilla(nn.Module):
         super(Vanilla, self).__init__()
         # features
         blocks = [BasicBlock(in_channels=in_channels, out_channels=max_features, kernel_size=kernel_size, padding=padding, normalization=normalization)]
-        for i in range(0, num_blocks - 2):
+        for i in range(num_blocks - 2):
             f = max_features // pow(2, (i+1))
             blocks.append(BasicBlock(in_channels=max(min_features, f * 2), out_channels=max(min_features, f), kernel_size=kernel_size, padding=padding, normalization=normalization))
         self.features = nn.Sequential(*blocks)
-        
+
         # classifier
         self.classifier = nn.Conv2d(in_channels=max(f, min_features), out_channels=1, kernel_size=kernel_size, padding=padding)
-        
+
         # initialize weights
         initialize_model(self)
 

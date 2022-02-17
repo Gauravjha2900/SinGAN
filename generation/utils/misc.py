@@ -12,13 +12,18 @@ def mkdir(save_path):
 
 def make_image_grid(x, nrow, padding=0):
     x = x.clone().cpu().data
-    grid = make_grid(x, nrow=nrow, padding=padding, normalize=False, scale_each=False, pad_value=0)
-    return grid
+    return make_grid(
+        x,
+        nrow=nrow,
+        padding=padding,
+        normalize=False,
+        scale_each=False,
+        pad_value=0,
+    )
 
 def tensor_to_image(x):
     ndarr = x.squeeze().mul_(255).add_(0.5).clamp_(0, 255).permute(1, 2, 0).to('cpu', torch.uint8).numpy()
-    image = Image.fromarray(ndarr)
-    return image
+    return Image.fromarray(ndarr)
 
 def plot_image_grid(x, nrow, padding=0):
     grid = make_image_grid(x=x, nrow=nrow, padding=padding).permute(1, 2, 0).numpy()
